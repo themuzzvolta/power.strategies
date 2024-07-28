@@ -5,42 +5,45 @@ online version:
 schema: 2.0.0
 ---
 
-# Get-HelloWorld
+# Get-ImpliedProbability
 
 ## SYNOPSIS
-Returns Hello world
+Calculates the implied probability from given decimal betting odds.
 
 ## SYNTAX
 
 ```
-Get-HelloWorld [[-Value] <String>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Get-ImpliedProbability [-BackOdds] <Double> [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Returns Hello world
+This function calculates the implied probability from given decimal betting odds.
+The implied probability is a measure of the likelihood of a specific outcome occurring, derived from the decimal odds.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```
-Get-HelloWorld
+$probability = Get-ImpliedProbability -BackOdds 3.5
+$probability
 ```
 
-Runs the command
+This example calculates the implied probability for decimal odds of 3.5.
 
 ## PARAMETERS
 
-### -Value
-Parameter description can go here or above in format: .PARAMETER  \<Parameter-Name\>
+### -BackOdds
+The decimal odds for which the implied probability is to be calculated.
+Decimal odds must be greater than 1.
 
 ```yaml
-Type: String
+Type: Double
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: 1
-Default value: GetHelloWorld
+Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -67,7 +70,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.String
+### System.Double
+### The calculated implied probability as a percentage.
 ## NOTES
+Author: Kurt Murray
+Date: 28/07/2024
+Version: 1.0
 
 ## RELATED LINKS
